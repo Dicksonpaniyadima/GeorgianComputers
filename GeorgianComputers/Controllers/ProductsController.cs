@@ -47,7 +47,7 @@ namespace GeorgianComputers.Controllers
         // GET: Products/Create
         public IActionResult Create()
         {
-            ViewData["CategoryId"] = new SelectList(_context.Category, "CategoryId", "Name");
+            ViewData["CategoryId"] = new SelectList(_context.Category.OrderBy(c => c.Name), "CategoryId", "Name");
             return View();
         }
 
